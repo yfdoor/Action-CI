@@ -13,6 +13,7 @@
     C、默认由 https://github.com/coolsnowwolf/lede/trunk/package/lean/ 抓取 package 文件夹。
 
 3、OpenWrt-CI.yml 用来编译固件。
+
     A、默认是点击 “star” 触发编译。
     
     B、环境变量
@@ -25,4 +26,5 @@
 # 使用说明
 将文件放在项目的 .github/workflows 目录下即可。
 
-https://github.com/yfdoor
+
+##### Github:##### https://github.com/yfdoor

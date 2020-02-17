@@ -124,8 +124,8 @@ jobs:
           # EOF
 
           # 常用LuCI插件选择:
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-adbyby-plus=m
+          # cat >> .config <<EOF
+          # CONFIG_PACKAGE_luci-app-adbyby-plus=m
           # CONFIG_PACKAGE_luci-app-aria2=y
           # CONFIG_PACKAGE_luci-app-baidupcs-web=y
           # CONFIG_PACKAGE_luci-app-docker=y
@@ -135,7 +135,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-openvpn=y
           # CONFIG_PACKAGE_luci-app-openvpn-server=y
           # CONFIG_PACKAGE_luci-app-qbittorrent=y
-          CONFIG_PACKAGE_luci-app-ssr-plus=m
+          # CONFIG_PACKAGE_luci-app-ssr-plus=m
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
@@ -147,7 +147,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-webadmin=y
           # CONFIG_PACKAGE_luci-app-wireguard=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          EOF
+          # EOF
 
           # LuCI主题:
           # cat >> .config <<EOF
@@ -213,7 +213,7 @@ jobs:
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_IPK == 'true'
         with:
          name: OpenWrt_bin_yfdoor
-         path: openwrt/bin/package
+         path: ./bin/packages/
 
       # 准备固件文件
       - name: Organize artifact

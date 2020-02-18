@@ -16,8 +16,8 @@ on:
 
 # 编译环境定义
 env:
-  SSH_ACTIONS: true
-  UPLOAD_BIN_IPK: true
+  SSH_ACTIONS: false
+  UPLOAD_BIN_IPK: false
   UPLOAD_FIRMWARE: true
 
 jobs:
@@ -180,9 +180,9 @@ jobs:
           make defconfig
 
       # SSH 连接服务
-      #- name: SSH connection to Actions
-      #  uses: yfdoor/debugger-action@master
-      #  if: env.SSH_ACTIONS == 'true'
+      - name: SSH connection to Actions
+        uses: yfdoor/debugger-action@master
+        if: env.SSH_ACTIONS == 'true'
 
       # 下载所需文件
       - name: Make download

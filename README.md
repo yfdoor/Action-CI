@@ -3,7 +3,6 @@
 
 ## 特点
 - 可以采用官方 OpenWrt 和Lean package 包的结合方式。
-
 - OpenWrt-C-CI.yml: 无需 fork 源码，直接使用该文件就可以执行编译。
   - 默认是点击 “star” 触发编译。
   - 环境变量
@@ -17,7 +16,8 @@
    - 固件定制，请参照文件内说明
   
 - OpenWrt-P-CI.yml: 需要 fork 源码到自己的仓库。
-- Merge-upstream.yml：搭配 ***OpenWrt-P-CI.yml*** 使用，用来自动由 openwrt 和Lean 的package 文件夹下载最新源码。
+  - 参照 OpenWrt-C-CI.yml
+- Merge-upstream.yml：搭配 OpenWrt-P-CI.yml 使用，用来自动由 openwrt 和Lean's package 文件夹下载最新源码。
   - 默认是每天固定时间触发。
   - 默认由 https://github.com/openwrt/openwrt.git 更新源码。
   - 默认由 https://github.com/coolsnowwolf/lede/trunk/package/lean/ 抓取 package 文件夹。

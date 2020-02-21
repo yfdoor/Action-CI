@@ -2,6 +2,8 @@
 
 ## 简介：
 - 参照 P3TERX 和 KFERMercer 修改的自用 OpenWrt CI 文件。
+  - https://github.com/P3TERX/Actions-OpenWrt
+  - https://github.com/KFERMercer/OpenWrt-CI
 
 ## 功能：
 - 可以采用官方 OpenWrt 和Lean package 包结合的方式。

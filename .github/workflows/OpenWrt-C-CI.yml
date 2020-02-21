@@ -17,7 +17,7 @@ on:
 # 编译环境定义
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_IPK: true
   UPLOAD_FIRMWARE: true
   PACKAGE_INCLUDE: true

@@ -19,8 +19,7 @@
    - 固件定制，请参照文件内说明
   
 - 第二种方法：
-  - **OpenWrt-P-CI.yml：** 需要 fork 源码到自己的仓库。
-  - 用法请参照 OpenWrt-C-CI.yml
+  - **OpenWrt-P-CI.yml：** 需要 fork 源码到自己的仓库，用法请参照 OpenWrt-C-CI.yml。
   - **Merge-upstream.yml：** 搭配 OpenWrt-P-CI.yml 使用，用来自动由 openwrt 和Lean's package 文件夹下载最新源码。
     - 默认是每天固定时间触发。
     - 默认由 https://github.com/openwrt/openwrt.git 更新源码。

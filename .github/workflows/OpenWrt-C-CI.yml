@@ -55,7 +55,7 @@ jobs:
 
      # 更新Lean's package
       - name: Copy Lean's Package
-        if: $PACKAGE_INCLUDE == 'true' && $REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
+        if: env.PACKAGE_INCLUDE == 'true' && $REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
         run: |
           cd openwrt
           sudo rm -rf package/yfdoor

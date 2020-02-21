@@ -50,12 +50,12 @@ jobs:
      # 下载源码
       - name: Clone source code
         run: |
-          git clone $REPO_URL openwrt
+          git clone env.REPO_URL openwrt
           ls -l
 
      # 更新Lean's package
       - name: Copy Lean's Package
-        if: env.PACKAGE_INCLUDE == 'true' && $REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
+        if: env.PACKAGE_INCLUDE == 'true' && env.REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
         run: |
           cd openwrt
           sudo rm -rf package/yfdoor
@@ -204,7 +204,7 @@ jobs:
       # SSH连接
       - name: SSH connection
         uses: yfdoor/debugger-action@master
-        if: $SSH_ACTIONS == 'true'
+        if: env.SSH_ACTIONS == 'true'
 
       # 下载文件
       - name: Make download
@@ -233,7 +233,7 @@ jobs:
       # 上传IPK
       - name: Upload bin IPK
         uses: actions/upload-artifact@master
-        if: $UPLOAD_BIN_IPK == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
+        if: env.UPLOAD_BIN_IPK == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
         with:
          name: OpenWrt_bin_yfdoor
          path: ./openwrt/bin/packages/
@@ -241,7 +241,7 @@ jobs:
       # 准备固件
       - name: Organize artifact
         id: organize
-        if: $UPLOAD_FIRMWARE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
+        if: env.UPLOAD_FIRMWARE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
         run: |
           find ./openwrt/bin/targets/ -type d -name "packages" | xargs rm -rf {}
           echo "::set-output name=status::success"

@@ -50,12 +50,12 @@ jobs:
      # 下载源码
       - name: Clone source code
         run: |
-          git clone env.REPO_URL openwrt
+          git clone $REPO_URL openwrt
           ls -l
 
      # 更新Lean's package
       - name: Copy Lean's Package
-        if: env.PACKAGE_INCLUDE == 'true' && env.REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
+        if: env.PACKAGE_INCLUDE == 'true' && $REPO_URL != 'https://github.com/coolsnowwolf/lede.git'
         run: |
           cd openwrt
           sudo rm -rf package/yfdoor

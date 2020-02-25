@@ -29,3 +29,4 @@
  
 ## 用法：
  - 将相应文件放在项目的 .github/workflows 目录下即可。
+ - 若要使用 官方源码加 Lean package 的方式，请注意需要修改 feeds.conf.default 文件，将 https://github.com/coolsnowwolf/packages.git 添加进去。

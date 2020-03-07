@@ -8,14 +8,14 @@ on:
     watch:
       types: started   
 
-
 jobs:
-  git-repo-backup:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: git-repo-backup
-      uses: jenkins-zh/git-backup-actions@v0.0.1
-      env:
-        GIT_DEPLOY_KEY: ${{ secrets.GITEE_TOKEN }}
-        TARGET_GIT: "git@gitee.com:yfdoor/OpenWrt-CI.git"
+  to_gitlab:
+    runs-on: ubuntu-18.04
+    steps:                                              # <-- must use actions/checkout@v1 before mirroring!
+    - uses: actions/checkout@v1
+    - uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url:
+          git@gitee.com:yfdoor/OpenWrt-CI.git
+        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
+          ${{ secrets.GITEE_TOKEN }}

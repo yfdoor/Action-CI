@@ -12,12 +12,14 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Hub Mirror Action.
-        uses: Yikun/hub-mirror-action@v0.02
-        with:
-          src: github/yfdoor/OpenWrt-CI
-          dst: gitee/yfdoor/OpenWrt-CI
-          # dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_TOKEN }}
+    - name: repo-sync
+      uses: wei/git-sync@v1.1.2
+      env:
+        SOURCE_REPO: "git@github.com:yfdoor/OpenWrt-CI.git"
+        SOURCE_BRANCH: "match"
+        DESTINATION_REPO: "git@gitee.com:yfdor/OpenWrt-CI.git"
+        DESTINATION_BRANCH: "master"
+        GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+      with:
+        args: $SOURCE_REPO $SOURCE_BRANCH $DESTINATION_REPO $DESTINATION_BRANCH

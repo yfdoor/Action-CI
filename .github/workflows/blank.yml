@@ -8,14 +8,8 @@ on:
     watch:
       types: started   
 
+
 jobs:
-  to_gitlab:
-    runs-on: ubuntu-18.04
-    steps:                                              # <-- must use actions/checkout@v1 before mirroring!
-    - uses: actions/checkout@v1
-    - uses: pixta-dev/repository-mirroring-action@v1
-      with:
-        target_repo_url:
-          git@gitee.com:yfdoor/OpenWrt-CI.git
-        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
-          ${{ secrets.GITEE_TOKEN }}
+  repo-sync:
+    runs-on: ubuntu-latest
+

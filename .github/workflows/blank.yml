@@ -8,18 +8,14 @@ on:
     watch:
       types: started   
 
-jobs:
 
-  build:
+jobs:
+  git-repo-backup:
     runs-on: ubuntu-latest
     steps:
-    - name: repo-sync
-      uses: wei/git-sync@v1.1.2
+    - uses: actions/checkout@master
+    - name: git-repo-backup
+      uses: jenkins-zh/git-backup-actions@v0.0.1
       env:
-        SOURCE_REPO: "git@github.com:yfdoor/OpenWrt-CI.git"
-        SOURCE_BRANCH: "match"
-        DESTINATION_REPO: "git@gitee.com:yfdor/OpenWrt-CI.git"
-        DESTINATION_BRANCH: "master"
-        GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
-      with:
-        args: $SOURCE_REPO $SOURCE_BRANCH $DESTINATION_REPO $DESTINATION_BRANCH
+        GIT_DEPLOY_KEY: ${{ secrets.GITEE_TOKEN }}
+        TARGET_GIT: "git@gitee.com:yfdoor/OpenWrt-CI.git"

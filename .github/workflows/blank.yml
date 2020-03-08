@@ -18,7 +18,6 @@ jobs:
         uses: actions/checkout@master
        
       - name: Upload Branch
-        if: env.UPLOAD_BRANCH == 'true' && steps.compile.outputs.status == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |

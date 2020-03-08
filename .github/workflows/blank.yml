@@ -18,5 +18,5 @@ jobs:
        with:
          src: github/yfdoor
          dst: gitee/yfdoor
-         #dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+         dst_key: ${{ secrets.GITEE_TOKEN }}
          dst_token:  ${{ secrets.GITEE_TOKEN }}

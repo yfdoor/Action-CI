@@ -13,16 +13,10 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-      # 项目初始
-      - name: Code Checkout
-        uses: actions/checkout@master
-       
-      - name: Upload Branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITEE_TOKEN }}
-        run: |
-          git config user.name "yfdoor"
-          git config user.email "yfdoor@gitee.com"
-          # git add .
-          # git commit -m "Update on $date"
-          git push https://$GITHUB_TOKEN@gitee.com/yfdoor/OpenWrt-CI.git
+     - name: Mirror the Github organization repos to Gitee.
+       uses: Yikun/hub-mirror-action@master
+       with:
+         src: github/yfdoor
+         dst: gitee/yfdoor
+         #dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+         dst_token:  ${{ secrets.GITEE_TOKEN }}

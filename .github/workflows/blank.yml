@@ -13,6 +13,10 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
+      # 项目初始
+     - name: Code Checkout
+       uses: actions/checkout@master
+        
      - name: Mirror the Github organization repos to Gitee.
        uses: Yikun/hub-mirror-action@master
        with:

@@ -16,11 +16,3 @@ jobs:
       # 项目初始
      - name: Code Checkout
        uses: actions/checkout@master
-        
-     - name: Mirror the Github organization repos to Gitee.
-       uses: Yikun/hub-mirror-action@master
-       with:
-         src: github/yfdoor
-         dst: gitee/yfdoor
-         dst_key: ${{ secrets.GITEE_TOKEN }}
-         dst_token:  ${{ secrets.GITEE_TOKEN }}

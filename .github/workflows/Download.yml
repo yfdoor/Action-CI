@@ -1,0 +1,43 @@
+# This is free software, lisence use MIT.
+# Copyright (C) https://github.com/yfdoor
+
+name: Download
+
+# 触发条件
+on:
+  #  push:
+  #    branches:
+  #      - master
+  #    paths:
+  #      - '.config'
+  # schedule:
+  #   - cron: 0 0 1/3 * *
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    
+    steps:
+      # 项目初始
+      - name: Code Checkout
+        uses: actions/checkout@master
+        
+     # 下载软件
+      - name: Download Package
+        run: |
+          export DOWNLOAD_PATH="$(cat DOWNLOAD.PATH)"
+          mkdir -p download && wget -P download $DOWNLOAD_PATH
+          
+     # 更新分支
+      - name: Upload Branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          git config user.name "yfdoor"
+          git config user.email "yfdoor@github.com"
+          git add .
+          git commit -m "Update new package "$CON_FILE
+          git push

@@ -29,8 +29,11 @@ jobs:
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
+          echo $DOWNLOAD_PATH
           mkdir -p download/$(TZ=UTC-8 date +"%Y.%m.%d") && wget -P download/$(TZ=UTC-8 date +"%Y.%m.%d") $DOWNLOAD_PATH
+          ls -l  
           cd download/$(TZ=UTC-8 date +"%Y.%m.%d")
+          ls -l
           zip -r $(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m *
           du -h
           

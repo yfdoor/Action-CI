@@ -19,25 +19,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-    
+
     steps:
       # 项目初始
       - name: Code Checkout
         uses: actions/checkout@master
-        
+
      # 下载软件
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
-          rm -rf download
+          sudo rm -rf download
           mkdir -p download/tmp && wget -P download/tmp --content-disposition $DOWNLOAD_PATH -o DownloadLog.log
-          ls -l  
+          ls -l
           cd download
           ls -l
           zip -r File_$(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m tmp
           ls -l
 
-          
      # 更新分支
       - name: Upload Branch
         env:

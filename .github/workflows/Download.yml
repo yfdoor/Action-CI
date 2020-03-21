@@ -28,8 +28,10 @@ jobs:
      # 下载软件
       - name: Download Package
         run: |
-          export DOWNLOAD_PATH="$(cat DOWNLOAD.PATH)"
-          mkdir -p download && wget -P download $DOWNLOAD_PATH
+          export DOWNLOAD_PATH="$(cat DOWNLOAD.URL)"
+          mkdir -p download/$(TZ=UTC-8 date +"%Y.%m.%d") && wget -P download/$(TZ=UTC-8 date +"%Y.%m.%d") $DOWNLOAD_PATH
+          cd download/$(TZ=UTC-8 date +"%Y.%m.%d")
+          zip -r $(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m *
           
      # 更新分支
       - name: Upload Branch
@@ -39,5 +41,5 @@ jobs:
           git config user.name "yfdoor"
           git config user.email "yfdoor@github.com"
           git add .
-          git commit -m "Update new package "$CON_FILE
+          git commit -m "Update new package "$(TZ=UTC-8 date +"%Y.%m.%d").zip
           git push

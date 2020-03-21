@@ -28,10 +28,11 @@ jobs:
      # 下载软件
       - name: Download Package
         run: |
-          export DOWNLOAD_PATH="$(cat DOWNLOAD.URL)"
+          export DOWNLOAD_PATH="$(cat Download.URL)"
           mkdir -p download/$(TZ=UTC-8 date +"%Y.%m.%d") && wget -P download/$(TZ=UTC-8 date +"%Y.%m.%d") $DOWNLOAD_PATH
           cd download/$(TZ=UTC-8 date +"%Y.%m.%d")
           zip -r $(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m *
+          du -h
           
      # 更新分支
       - name: Upload Branch

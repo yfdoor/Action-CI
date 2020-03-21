@@ -29,12 +29,12 @@ jobs:
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
-          echo $DOWNLOAD_PATH
-          mkdir -p download && wget -P download $DOWNLOAD_PATH -o DownloadLog.log
+          rm -rf download
+          mkdir -p download/tmp && wget -P download/tmp --content-disposition $DOWNLOAD_PATH -o DownloadLog.log
           ls -l  
           cd download
           ls -l
-          zip -r $(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m *
+          zip -r File_$(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m tmp
           ls -l
 
           

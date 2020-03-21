@@ -30,12 +30,9 @@ jobs:
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
           sudo rm -rf download
-          mkdir -p download/tmp && wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
-          ls -l
-          cd download
-          ls -l
-          zip -r File_$(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m tmp
-          ls -l
+          mkdir -p download && wget --content-disposition -P download -o DownloadLog.log $DOWNLOAD_PATH
+          #cd download
+          #zip -r File_$(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m tmp
 
      # 更新分支
       - name: Upload Branch

@@ -30,7 +30,7 @@ jobs:
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
           sudo rm -rf download
-          mkdir -p download/tmp && wget -P download/tmp --content-disposition $DOWNLOAD_PATH -o DownloadLog.log
+          mkdir -p download/tmp && wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
           ls -l
           cd download
           ls -l

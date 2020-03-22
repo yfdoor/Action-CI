@@ -1,19 +1,18 @@
---2020-03-22 01:34:54--  https://gitee.com/yfdoor/OpenWrt/raw/OpenWrt_x86_64/targets/x86/64/openwrt-x86-64-combined-squashfs.img.gz
-Resolving gitee.com (gitee.com)... 117.28.245.92
-Connecting to gitee.com (gitee.com)|117.28.245.92|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://gitee.com/login?redirect_to_url=http%3A%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz [following]
---2020-03-22 01:34:57--  http://gitee.com/login?redirect_to_url=http%3A%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz
-Connecting to gitee.com (gitee.com)|117.28.245.92|:80... connected.
-HTTP request sent, awaiting response... 301 Moved Permanently
-Location: https://gitee.com/login?redirect_to_url=http%3A%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz [following]
---2020-03-22 01:34:57--  https://gitee.com/login?redirect_to_url=http%3A%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz
-Connecting to gitee.com (gitee.com)|117.28.245.92|:443... connected.
+--2020-03-22 02:08:56--  https://raw.githubusercontent.com/hyird/Action-Openwrt/packages/x86_64/base/adbyby_2.7-20200315_x86_64.ipk
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.248.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.248.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘download/tmp/login?redirect_to_url=http:%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz’
+Length: 402027 (393K) [application/octet-stream]
+Saving to: ‘download/tmp/adbyby_2.7-20200315_x86_64.ipk’
 
-     0K .......... .........                                    104K=0.2s
+     0K .......... .......... .......... .......... .......... 12% 41.8M 0s
+    50K .......... .......... .......... .......... .......... 25% 79.0M 0s
+   100K .......... .......... .......... .......... .......... 38% 85.2M 0s
+   150K .......... .......... .......... .......... .......... 50% 85.2M 0s
+   200K .......... .......... .......... .......... .......... 63% 65.4M 0s
+   250K .......... .......... .......... .......... .......... 76% 92.3M 0s
+   300K .......... .......... .......... .......... .......... 89% 78.4M 0s
+   350K .......... .......... .......... .......... ..        100% 81.1M=0.005s
 
-2020-03-22 01:34:59 (104 KB/s) - ‘download/tmp/login?redirect_to_url=http:%2F%2Fgitee.com%2Fyfdoor%2FOpenWrt%2Fraw%2FOpenWrt_x86_64%2Ftargets%2Fx86%2F64%2Fopenwrt-x86-64-combined-squashfs.img.gz’ saved [20378]
+2020-03-22 02:08:56 (71.7 MB/s) - ‘download/tmp/adbyby_2.7-20200315_x86_64.ipk’ saved [402027/402027]
 

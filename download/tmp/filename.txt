@@ -1,0 +1,2 @@
+adbyby_2.7-20200315_x86_64.ipk filename.txt
+https://raw.githubusercontent.com/hyird/Action-Openwrt/packages/x86_64/base/adbyby_2.7-20200315_x86_64.ipk

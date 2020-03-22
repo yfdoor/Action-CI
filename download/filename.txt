@@ -1,2 +1,2 @@
 OpenWrt firmware.zip
-https://pipelines.actions.githubusercontent.com/oFar2WmGT0AgjDyshLHuJ5WPpJzQ77Mo0UaqSHQ9VK9zqfUgRl/_apis/pipelines/1/runs/116/signedartifactscontent?artifactName=OpenWrt%20firmware&urlExpires=2020-03-22T02%3A58%3A11.7106251Z&urlSigningMethod=HMACV1&urlSignature=ajIQ9NBMOU8APRpFDkhLbfB%2BJtVkArproQXIQEXW0dA%3D
+https://pipelines.actions.githubusercontent.com/oFar2WmGT0AgjDyshLHuJ5WPpJzQ77Mo0UaqSHQ9VK9zqfUgRl/_apis/pipelines/1/runs/116/signedartifactscontent?artifactName=OpenWrt%20firmware&urlExpires=2020-03-22T03%3A06%3A50.7390067Z&urlSigningMethod=HMACV1&urlSignature=bqa5bHkgNqaPgayFWlvDshnxhonTjf2jExWq0QN%2BhIA%3D

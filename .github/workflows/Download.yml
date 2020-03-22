@@ -30,9 +30,14 @@ jobs:
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
           sudo rm -rf download
-          mkdir -p download && wget --content-disposition -P download -o DownloadLog.log $DOWNLOAD_PATH
-          #cd download
-          #zip -r File_$(TZ=UTC-8 date +"%Y.%m.%d").zip -s 100m tmp
+          mkdir -p download/tmp
+          wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
+          ls download/tmp | xargs echo > filename
+          export FNAME="$(cat filename)"
+          echo $DOWNLOAD_PATH >> filename
+          cd download
+          zip -r $FNAME.zip -s 100m tmp
+          # rm -rf tmp
 
      # 更新分支
       - name: Upload Branch
@@ -42,5 +47,5 @@ jobs:
           git config user.name "yfdoor"
           git config user.email "yfdoor@github.com"
           git add .
-          git commit -m "Update new package "$(TZ=UTC-8 date +"%Y.%m.%d").zip
+          git commit -m "Update new package "$FNAME.zip
           git push

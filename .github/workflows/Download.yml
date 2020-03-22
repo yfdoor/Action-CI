@@ -29,14 +29,14 @@ jobs:
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
-          # rm -rf download
+          rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
           ls download/tmp | xargs echo > download/filename.txt    
           export FNAME="$(cat download/filename.txt)"
           echo $DOWNLOAD_PATH >> download/filename.txt
           cd download
-          mv filename.txt tmp/filename.txt
+          cp filename.txt tmp/filename.txt
           echo $FNAME
           zip -r $FNAME.zip -s 100m tmp
           rm -rf tmp

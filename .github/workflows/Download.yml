@@ -41,8 +41,8 @@ jobs:
           cd download
           echo $FNAME
           echo $DOWNLOAD_PATH
-          echo download/tmp/filename.txt
-          ls download/tmp
+          echo tmp/filename.txt
+          ls tmp
 
           zip -r Filename.zip -s 100m tmp
           # rm -rf tmp

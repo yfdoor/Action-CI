@@ -36,7 +36,9 @@ jobs:
           export FNAME="$(cat download/tmp/filename)"
           echo $DOWNLOAD_PATH >> download/tmp/filename
           cd download
-          zip -r $FNAME".zip" -s 100m tmp
+          echo $FNAME
+          
+          zip -r Filename.zip" -s 100m tmp
           # rm -rf tmp
 
      # 更新分支

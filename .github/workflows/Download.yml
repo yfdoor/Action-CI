@@ -29,7 +29,6 @@ jobs:
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
-          rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
           ls download/tmp | xargs echo > download/filename.txt    
@@ -39,7 +38,7 @@ jobs:
           mv filename.txt tmp/filename.txt
           echo $FNAME
           zip -r $FNAME.zip -s 100m tmp
-          # rm -rf tmp
+          rm -rf tmp
 
      # 更新分支
       - name: Upload Branch

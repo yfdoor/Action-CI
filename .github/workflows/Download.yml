@@ -32,9 +32,9 @@ jobs:
           sudo rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
-          ls download/tmp | xargs echo > filename
-          export FNAME="$(cat filename)"
-          echo $DOWNLOAD_PATH >> filename
+          ls download/tmp | xargs echo > download/tmp/filename
+          export FNAME="$(cat download/tmp/filename)"
+          echo $DOWNLOAD_PATH >> download/tmp/filename
           cd download
           zip -r $FNAME.zip -s 100m tmp
           # rm -rf tmp
@@ -47,5 +47,5 @@ jobs:
           git config user.name "yfdoor"
           git config user.email "yfdoor@github.com"
           git add .
-          git commit -m "Update new package "$FNAME.zip
+          git commit -m "Update new package"
           git push

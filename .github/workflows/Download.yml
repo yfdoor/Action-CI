@@ -32,14 +32,13 @@ jobs:
           rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
-          ls download/tmp | xargs echo > download/filename.txt
-          echo $FNAME
+          ls download/tmp | xargs echo > download/filename.txt    
           export FNAME="$(cat download/filename.txt)"
           echo $DOWNLOAD_PATH >> download/filename.txt
           cd download
-          echo $FNAME
           mv filename.txt tmp/filename.txt
-          zip -r File.zip -s 100m tmp
+          echo $FNAME
+          zip -r $FNAME.zip -s 100m tmp
           # rm -rf tmp
 
      # 更新分支

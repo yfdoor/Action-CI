@@ -29,7 +29,7 @@ jobs:
       - name: Download Package
         run: |
           export DOWNLOAD_PATH="$(cat Download.URL)"
-          sudo rm -rf download
+          rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
           ls download/tmp | xargs echo > download/tmp/filename.txt

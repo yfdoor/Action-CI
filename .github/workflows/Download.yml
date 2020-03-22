@@ -32,13 +32,16 @@ jobs:
           sudo rm -rf download
           mkdir -p download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
-          ls download/tmp | xargs echo > download/tmp/filename
-          export FNAME="$(cat download/tmp/filename)"
-          echo $DOWNLOAD_PATH >> download/tmp/filename
+          ls download/tmp | xargs echo > download/tmp/filename.txt
+          export FNAME="$(cat download/tmp/filename.txt)"
+          echo $DOWNLOAD_PATH >> download/tmp/filename.txt
           cd download
           echo $FNAME
-          
-          zip -r Filename.zip" -s 100m tmp
+          echo $DOWNLOAD_PATH
+          echo download/tmp/filename.txt
+          ls download/tmp
+
+          zip -r Filename.zip -s 100m tmp
           # rm -rf tmp
 
      # 更新分支

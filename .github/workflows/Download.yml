@@ -31,7 +31,10 @@ jobs:
           export DOWNLOAD_PATH="$(cat Download.URL)"
           rm -rf download
           mkdir -p download/tmp
+          ls -l
+          ls -l download/tmp
           wget --content-disposition -P download/tmp -o DownloadLog.log $DOWNLOAD_PATH
+          ls -l download/tmp
           ls download/tmp | xargs echo > download/tmp/filename.txt
           export FNAME="$(cat download/tmp/filename.txt)"
           echo $DOWNLOAD_PATH >> download/tmp/filename.txt

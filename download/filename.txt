@@ -1,2 +1,2 @@
-balenaEtcher-Portable-1.5.80.exe
-https://github-production-release-asset-2e65be.s3.amazonaws.com/45055693/fc344600-6dd4-11ea-8b9d-8ea0227cb034?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200327T145355Z&X-Amz-Expires=300&X-Amz-Signature=84bdcace83be943166e57c5ab7bc5c97214b0421eab8d2524830accff371671f&X-Amz-SignedHeaders=host&actor_id=32769281&response-content-disposition=attachment%3B%20filename%3DbalenaEtcher-Portable-1.5.80.exe&response-content-type=application%2Foctet-stream
+OpenWrt firmware.zip
+https://pipelines.actions.githubusercontent.com/TldQZJLpxlG1loyevFAxRcxAlKFJRoNxAApFwDd4Mflfnqa3jb/_apis/pipelines/1/runs/150/signedartifactscontent?artifactName=OpenWrt%20firmware&urlExpires=2020-03-28T01%3A45%3A11.0606422Z&urlSigningMethod=HMACV1&urlSignature=BvAQbhBZoCtlw9cfxT2HGc2DS%2F4ssTPA%2Fne9%2FYyBp9c%3D
